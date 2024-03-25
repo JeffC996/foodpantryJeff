@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Submission to Firebase with Dynamic URL Data</title>
+    <style>
+        .form-group {
+            display: flex;
+            align-items: center; /* 确保标签和输入框在交叉轴上对齐 */
+            margin-bottom: 10px; /* 添加一些底部边距 */
+        }
+        .form-group label {
+            width: 80px; /* 为标签设置宽度 */
+            margin-right: 10px; /* 标签和输入框之间的间距 */
+        }
+        .form-group input {
+            flex: 1; /* 输入框占据剩余空间 */
+        }
+        #dataForm {
+            width: 300px; /* 可以调整表单宽度 */
+        }
+    </style>
+</head>
+<body>
+    <form id="dataForm">
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" style="background-color: #cccccc;" readonly>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" style="background-color: #cccccc;" readonly>
+        </div>
+        <div class="form-group">
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" style="background-color: #cccccc;" readonly>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Quantity">
+        </div>
+        <button type="button" onclick="submitData()">Submit</button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            databaseURL: "https://foodpantry-1a506-default-rtdb.firebaseio.com/", // 注意这里是 databseURL
+            projectId: "foodpantry", // 项目 ID
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function submitData() {
+    var type = document.getElementById('type').value;
+    var category = document.getElementById('category').value;
+    var brand = document.getElementById('brand').value;
+    var addedQuantity = parseInt(document.getElementById('quantity').value, 10);
+
+    // Construct the reference path
+    var path = `data/${type}/${category}/${brand}`;
+    var dataRef = firebase.database().ref(path);
+
+    // Use a transaction to read, then optionally update the quantity
+    dataRef.transaction(function(currentData) {
+        if (currentData === null) {
+            // 如果当前没有数据，就创建新数据
+            return { quantity: addedQuantity };
+        } else {
+            // 如果已有数据，增加数量
+            currentData.quantity = currentData.quantity + addedQuantity;
+            return currentData;
+        }
+    }, function(error, committed, snapshot) {
+        if (error) {
+            alert('Transaction failed: ' + error.message);
+        } else if (!committed) {
+            alert('Transaction not committed.');
+        } else {
+            alert('Quantity updated successfully.');
+        }
+        // 这里可以添加一些在更新后需要执行的代码
+    }, false);
+    }
+
+
+        // Function to extract data from the URL and fill the form
+        function fillDataFromUrl() {
+            const pathArray = window.location.pathname.split('/');
+            // Assuming the URL structure is like /fill/{type}/{category}/{brand}
+            if (pathArray.length >= 5) {
+                document.getElementById('type').value = pathArray[2];
+                document.getElementById('category').value = pathArray[3];
+                document.getElementById('brand').value = pathArray[4];
+            }
+        }
+
+        // Fill the form with URL data on page load
+        window.onload = fillDataFromUrl;
+    </script>
+</body>
+</html>
