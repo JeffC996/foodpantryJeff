@@ -6,18 +6,18 @@
     <style>
         .form-group {
             display: flex;
-            align-items: center; /* 确保标签和输入框在交叉轴上对齐 */
-            margin-bottom: 10px; /* 添加一些底部边距 */
+            align-items: center; /* Make sure labels and input fields are aligned on the cross axis */
+            margin-bottom: 10px; /* Bottom margins */
         }
         .form-group label {
-            width: 80px; /* 为标签设置宽度 */
-            margin-right: 10px; /* 标签和输入框之间的间距 */
+            width: 80px; /* The width of the label */
+            margin-right: 10px; /* The space between the label and the input field */
         }
         .form-group input {
-            flex: 1; /* 输入框占据剩余空间 */
+            flex: 1; /* The input box occupies the remaining space */
         }
         #dataForm {
-            width: 300px; /* 可以调整表单宽度 */
+            width: 300px; /* The width of the form */
         }
     </style>
 </head>
@@ -46,8 +46,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <script>
         var firebaseConfig = {
-            databaseURL: "https://foodpantry-1a506-default-rtdb.firebaseio.com/", // 注意这里是 databseURL
-            projectId: "foodpantry", // 项目 ID
+            databaseURL: "https://foodpantry-1a506-default-rtdb.firebaseio.com/", // Databse URL
+            projectId: "foodpantry", // Project ID
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -65,10 +65,10 @@
     // Use a transaction to read, then optionally update the quantity
     dataRef.transaction(function(currentData) {
         if (currentData === null) {
-            // 如果当前没有数据，就创建新数据
+            // Create data if there is no data at all
             return { quantity: addedQuantity };
         } else {
-            // 如果已有数据，增加数量
+            // Modify data if there is any
             currentData.quantity = currentData.quantity + addedQuantity;
             return currentData;
         }
@@ -80,7 +80,7 @@
         } else {
             alert('Quantity updated successfully.');
         }
-        // 这里可以添加一些在更新后需要执行的代码
+        // 
     }, false);
     }
 
