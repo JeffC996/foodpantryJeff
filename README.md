@@ -8,7 +8,7 @@ Structure:
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
-If any of those commonds doesn't work just switch "python3" to "python."  
+If any of those commands doesn't work just switch "python3" to "python."  
 
 1. Install python   
 
