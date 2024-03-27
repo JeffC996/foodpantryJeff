@@ -8,8 +8,9 @@ Structure:
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
-If any of those commands doesn't work just switch "python3" to "python."  
 
+### Local installation
+If any of those commands doesn't work just switch "python3" to "python."  
 1. Install python   
 
 2. Install pip  
@@ -33,9 +34,19 @@ Category:B
 Brand: C
 Just change the URL to  http://localhost:8000/fill/A/B/C
 
-## What should be there:
-1. ![Html page](images/web.png)
+ What should be there at http://localhost:8000/fill/food/chips/lays :  
+1. ![Form page](images/web.png)
 2. ![Firebase](images/firebase.png)
+
+### 
+1. Scan a QR code with your Mobile phone camera:  
+![QR code for Chips](food_chips_lays_QRcode.png)
+2. Click on the URL that appears  
+![Example](scan.png)
+3. You should see this:  
+![Form page](Form_page_VM.png )
+4. Enter any number and check it out on [Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/rules?hl=zh-cn)  
+- Note: You need to log in with a Google account.
 
 ### Prerequisites
 1. Python  
