@@ -45,7 +45,7 @@ Just change the URL to  http://localhost:8000/fill/A/B/C
 2. Click on the URL that appears:  
 ![Example](images/scan.png)
 3. You should see this:  
-![Form page](images/form_page_VM.png)
+![Form page](images/form_page.png)
 4. Enter any number and check it out on [Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/rules?hl=zh-cn)  
 - Note: You need to log in with a Google account.
 
