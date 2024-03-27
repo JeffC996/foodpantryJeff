@@ -42,10 +42,10 @@ Just change the URL to  http://localhost:8000/fill/A/B/C
 ### 
 1. Scan a QR code with your Mobile phone camera:  
 ![QR code for Chips](images/food_chips_lays_QRcode.png)
-2. Click on the URL that appears  
+2. Click on the URL that appears:  
 ![Example](images/scan.png)
 3. You should see this:  
-![Form page](images/Form_page_VM.png )
+![Form page](images/form_page_VM.png)
 4. Enter any number and check it out on [Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/rules?hl=zh-cn)  
 - Note: You need to log in with a Google account.
 
