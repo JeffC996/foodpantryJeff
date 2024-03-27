@@ -3,8 +3,9 @@ An initial exploration of this project based on our previous discussions.
 
 
 Structure:  
-1. UI: html  
-2. Database: Firebase  
+1. web.py: Flask Python
+2. index.html: html
+2. Firebase: database
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
@@ -40,16 +41,16 @@ Just change the URL to  http://localhost:8000/fill/A/B/C
 
 ### 
 1. Scan a QR code with your Mobile phone camera:  
-![QR code for Chips](food_chips_lays_QRcode.png)
+![QR code for Chips](images/food_chips_lays_QRcode.png)
 2. Click on the URL that appears  
-![Example](scan.png)
+![Example](images/scan.png)
 3. You should see this:  
-![Form page](Form_page_VM.png )
+![Form page](images/Form_page_VM.png )
 4. Enter any number and check it out on [Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/rules?hl=zh-cn)  
 - Note: You need to log in with a Google account.
 
 ### Prerequisites
 1. Python  
-2. A firebase account
+2. A Google account to log in firebase
 
 ## Changelog
