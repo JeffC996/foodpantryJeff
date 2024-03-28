@@ -46,8 +46,9 @@ Just change the URL to  http://localhost:8000/fill/A/B/C
 ![Example](images/scan.png)
 3. You should see this:  
 ![Form page](images/form_page.png)
-4. Enter any number in and check it out on [Firebase Console](https://foodpantry-1a506-default-rtdb.firebaseio.com/)  
-- Note: You need to log in with a Google account.
+4. Enter any number in and check it out on [Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/data?hl=zh-cn)  
+- Note: You need to log in with a Google account.  
+- Note: You need to be added as a Member to access the Firebase Console.  
 
 ### Prerequisites
 1. Python  
