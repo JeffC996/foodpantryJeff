@@ -30,7 +30,8 @@ python3 web.py
  What should be there at http://localhost:8000/fill/food/chips/lays:  
  ![Form page](images/web.png)  
 What should be there at :  
-[Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/data?hl=zh-cn)
+[Firebase Console](https://console.firebase.google.com/project/foodpantry-1a506/database/foodpantry-1a506-default-rtdb/data?hl=zh-cn)  
+![Firebase Console](images/firebase.png) 
 6. If you want to change the content of Type/Category/Brand, just change the URL.  
   
 Example:  
