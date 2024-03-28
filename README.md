@@ -1,4 +1,4 @@
-# CPSC-415-02 Food pantry demo
+# CPSC-415-02 Food Pantry Project Demo
 An initial exploration of this project based on our previous discussions.  
 
 
