@@ -40,9 +40,6 @@ Category:B
 Brand: C  
 To access the form with info in the example, just change the URL to  http://localhost:8000/fill/A/B/C
 
-
-
-
 ### User Operation Process
 1. Scan a QR code with your Mobile phone camera:  
 ![QR code for Chips](images/food_chips_lays_QRcode.png)
@@ -58,4 +55,10 @@ To access the form with info in the example, just change the URL to  http://loca
 1. Python  
 2. Google account
 
-## Changelog
+## Docker
+The [docker image](https://hub.docker.com/repository/docker/jeffyf/web.py/general) for this project is available on Docker Hub.  
+You can pull the image using the following command:
+```
+docker push jeffyf/web.py:latest
+```
+
