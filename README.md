@@ -56,6 +56,6 @@ To access the form with info in the example, just change the URL to  http://loca
 
 ### Prerequisites
 1. Python  
-2. A Google account to log in firebase
+2. Google account
 
 ## Changelog
